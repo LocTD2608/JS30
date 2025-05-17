@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function bangcuuchuong(n) {
+            t = n
+            for (i =1;i <= 10;i++) {
+                 n *= i
+                document.write(t + "x" + i + "=" + n + "<br>" )
+                n /= i
+            }
+        }
+        var n = parseInt(prompt())
+        bangcuuchuong(n)
+    </script>
+</body>
+</html>

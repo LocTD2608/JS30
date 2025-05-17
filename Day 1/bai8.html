@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function xeploai(diem) { 
+             if (diem >= 9 ) {
+                document.write("Xuất sắc")
+            } else if (diem >= 8  ) {
+                document.write('Giỏi')
+            } else if (diem >= 6.5  ) {
+                document.write('Khá')
+            } else if (diem >= 5 ) {
+                document.write("Trung bình")
+            } else {
+                document.write("Yếu")
+            }
+        }
+
+        var diem = parseFloat(prompt())
+        xeploai(diem)
+    </script>
+</body>
+</html>
