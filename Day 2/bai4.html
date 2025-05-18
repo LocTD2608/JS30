@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function  kiemtramatkhaumanh(matkhau) {
+            if  (matkhau.length >= 8 && /[A-Z]/.test(matkhau) && /a-z/.test(matkhau) && /\d/.test(matkhau)) {
+                document.write("mật khẩu mạnh")
+
+
+            } else {
+                document.write("mật khẩu yếu")
+            }
+            var n = parseInt(prompt())
+            kiemtramatkhaumanh(n)
+        }
+    </script>
+</body>
+</html>

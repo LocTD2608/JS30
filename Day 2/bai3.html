@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function laNamNhuan(nam) {
+        if ((nam % 4 == 0 && nam % 100 != 0) || (nam % 400 == 0)) {
+            document.write("Năm nhuận")
+        } else {
+            document.write("Năm không nhuận")
+        }
+        var nam = parseInt(prompt())
+            laNamNhuan(nam)
+        }
+    </script>
+</body>
+</html>
