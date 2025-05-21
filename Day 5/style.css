@@ -1,0 +1,52 @@
+.container{
+    display: flex;
+    width: 25rem;
+    height: 25rem;
+    background-color: rgb(189, 189, 189);
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.caculator {
+    display: flex;
+    margin:1px auto;
+    background-color: rgb(255, 255, 255);
+    width: 345px;   
+    height:22rem;
+    border: 2px solid rgb(199, 198, 198);
+    flex-wrap:wrap ;
+    padding: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.header {
+    display: flex;
+    width: 345px;
+    height:3rem;
+    border: 1px solid rgb(199, 198, 198);
+}
+.number {
+    display: flex;
+    justify-content: center;
+    align-items:center ;
+    border: 1px solid rgb(199, 198, 198);
+    height:72px;
+    width:84px;
+    padding: 0;
+    font-weight: bolder;
+}
+.aside {
+    display: flex;
+    justify-content: center;
+    align-items:center ;
+    border: 1px solid rgb(199, 198, 198);
+    height:72px;
+    width:84px;
+    background-color: rgb(255, 208, 54);
+    padding: 0;
+    color: aliceblue;
+    font-size:20px;
+    font-weight: bolder;
+}
