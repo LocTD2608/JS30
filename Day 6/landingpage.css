@@ -1,0 +1,110 @@
+.header {
+    display: flex;
+    background-color: rgb(201, 86, 86);
+    color:white ;
+    justify-content: space-between;
+    border-top:2px solid black;
+}
+
+.header-content {
+    display: flex;
+    gap: 20px;
+    padding-left: 15rem;
+    font-family: "Bungee Spice", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    
+}
+.icon {
+    display: flex;
+    gap: 25px;
+    justify-content: center;
+    align-items: center;
+    padding-right:15rem ;
+    font-size: 17px;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 15rem;
+}
+
+.sale {
+    display: flex;
+    gap: 20px;
+    background-color: rgb(223, 223, 223);
+    height: 100px;
+    width: 800px;
+    align-items: center;
+    justify-content: center;
+}
+.sale-content-1 {
+    font-family: "Bungee Spice", sans-serif;
+    font-size: 30px;
+}
+.sale-content-1 b {
+    font-weight: 900;
+}
+.sale-content-2 {
+    display: flex;
+    text-wrap: wrap;
+    width: 200px;
+    font-family: "Bungee Spice", sans-serif;
+}
+.button {
+    display: flex;
+    height: 50px;
+    width: 200px;
+    background-color: rgb(212, 3, 3);
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-family: "Bungee Spice", sans-serif;
+    border-radius:5px ;
+    font-size: 15px;
+}
+.Article {
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    background-color: rgb(230, 228, 228);
+    padding: 0 20px;
+    font-family: Arial, sans-serif;
+}
+.nav-menu {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .nav-menu li {
+    padding: 10px 20px;
+    border-right: 1px solid #eee;
+    cursor: pointer;
+    position: relative;
+  }
+  
+  .nav-menu li:last-child {
+    border-right: none;
+  }
+  
+  .nav-menu li i {
+    margin-left: 5px;
+    font-size: 0.75em;
+  }
+  
+  .nav-menu li.active {
+    color: red;
+    font-weight: bold;
+  }
+  
+  .search-icon {
+    padding: 15px 300px;
+    border-left: 1px solid #eee;
+    cursor: pointer;
+  }
+  
