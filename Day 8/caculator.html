@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="caculator">
+            <div class="header">
+                <input type="text" class="header" id="display" disabled>
+            </div>
+            <div class="number" onclick="addNum(1)">1</div>
+            <div class="number" onclick="addNum(2)">2</div>
+            <div class="number" onclick="addNum(3)">3</div>
+            <div class="aside" onclick="addOp('+')">+</div>
+            <div class="number" onclick="addNum(4)">4</div>
+            <div class="number" onclick="addNum(5)">5</div>
+            <div class="number" onclick="addNum(6)">6</div>
+            <div class="aside" onclick="addOp('-')">-</div>
+            <div class="number" onclick="addNum(7)">7</div>
+            <div class="number" onclick="addNum(8)">8</div>
+            <div class="number" onclick="addNum(9)">9</div>
+            <div class="aside"onclick="addOp('*')">x</div>
+            <div class="aside" onclick="clearDisplay()">C</div>
+            <div class="aside" onclick="addNum(0)">0</div>
+            <div class="aside" onclick="calculator()">=</div>
+            <div class="aside" onclick="addOp('/')">/</div>
+        </div>
+        <script>
+            var display = document.getElementById('display')
+
+            function addNum(num) {
+                display.value += num
+            }
+
+            function addOp(op) {
+                display.value += op
+            }
+
+            function clearDisplay() {
+                display.value = ' '
+            }
+            function calculator() {
+                try {
+                    display.value =eval(display.value)
+                }
+                catch(e) {
+                    display.value="Errol"
+                }
+            }
+        </script>
+    </div>
+</body>
+</html>

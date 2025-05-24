@@ -107,4 +107,65 @@ nav {
     border-left: 1px solid #eee;
     cursor: pointer;
   }
-  
+
+.footer {
+  width: 100%;
+  display: flex;
+  gap: 7px;
+  align-items: center;
+  justify-content: center;
+}
+
+.background-img-1,
+.background-img-2,
+.background-img-3 {
+  position: relative;
+  width: 650px;
+  height: 650px;
+  overflow: hidden;
+}
+
+.background-img-1 img,
+.background-img-2 img,
+.background-img-3 img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.img-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: center;
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.img-text p {
+  font-weight: bold;
+  font-size: 18px;
+  margin: 0 0 10px;
+  background-color: #7676ff;
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: 3px;
+}
+
+.img-text h3, .img-text h4 {
+  margin: 5px 0;
+}
+
+.background-img p {
+  background-color: rgb(118, 118, 255);
+  display:block;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 20px;
+  border-radius:3px ;
+  margin: 0 auto;
+}
