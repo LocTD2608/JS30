@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Đổi ảnh nền</title>
+  <style>
+    body {
+      background-image: url('https://images.unsplash.com/photo-1501785888041-af3ef285b470');
+      background-size: cover;
+      background-position: center;
+      height: 100vh;
+      margin: 0;
+      font-family: Arial;
+    }
+
+    .box {
+      position: absolute;
+      top: 30%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: rgba(255, 255, 255, 0.8);
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+    }
+
+    select, button {
+      padding: 10px;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="box">
+    <label for="bg-select"><strong>Chọn ảnh nền trang:</strong></label><br>
+    <select id="bg-select">
+      <option value="mountain">Núi non</option>
+      <option value="beach">Bãi biển</option>
+      <option value="city">Thành phố</option>
+    </select>
+    <br>
+    <button onclick="changeBackground()">Đổi ảnh nền</button>
+  </div>
+
+  <script>
+    function changeBackground() {
+      const select = document.getElementById("bg-select");
+      const value = select.value;
+
+      let imageUrl = "";
+
+      if (value === "mountain") {
+        imageUrl = "https://images.unsplash.com/photo-1501785888041-af3ef285b470";
+      } else if (value === "beach") {
+        imageUrl = "https://images.unsplash.com/photo-1507525428034-b723cf961d3e";
+      } else if (value === "city") {
+        imageUrl = "https://images.unsplash.com/photo-1494526585095-c41746248156";
+      }
+
+      document.body.style.backgroundImage = `url('${imageUrl}')`;
+    }
+  </script>
+
+</body>
+</html>
