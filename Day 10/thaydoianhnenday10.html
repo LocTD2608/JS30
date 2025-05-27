@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>slide ảnh nền</title>
+    <style>
+        body {
+            background-color: #e0e0e0;
+        }
+        .header {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .list-img {
+            display: flex;
+            justify-content: center;
+            align-items:center ;
+        }
+        .list-img img {
+            border-radius: 10px;
+        }
+        .prev-img {
+        display: flex;
+        border: 1px solid black;
+        height: 50px;
+        width: 100px;
+        justify-content: center;
+        }
+        .next-img {
+            display: flex;
+        border: 1px solid black;
+        height: 50px;
+        width: 100px;
+        justify-content: center;
+        }
+        .click-img {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            padding-top: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Trình chiếu ảnh bằng DOM</h1>
+        </div>
+        <div class="list-img">
+            <img src="img1.jpg" id="slider" alt="" height="800px" width="1100px">
+        </div>
+        <div class="click-img">
+            <div class="prev-img" onclick="prevImg()">
+                <p>⟵ Trước</p>
+            </div>
+            <div class="next-img" onclick="nextImg()">
+                <p>Sau ⟶</p>
+            </div>
+        </div>
+    </div>
+    <script>
+    const imageList = ["img1.jpg","img2.jpg","img3.jpg","img4.jpg"];   
+    let currentIndex = 0;
+    const slider = document.getElementById('slider')
+    slider.scr = imageList[currentIndex];
+
+    function showImage(index) {
+        if (index < 0) {
+            currentIndex = imageList.length-1
+        } else if (index >=imageList.length) {
+            currentIndex=0;
+        } else {
+            currentIndex = index;
+        }
+        slider.src = imageList[currentIndex];
+    }
+    function prevImg() {
+        showImage(currentIndex - 1);
+    }
+    function nextImg() {
+        showImage(currentIndex + 1);
+    }
+    </script>
+</body>
+</html>
