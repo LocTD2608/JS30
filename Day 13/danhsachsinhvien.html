@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Thêm sinh viên vào danh sách</h1>
+        </div>
+        <div class="table">
+            <div class="input">
+                <p>Mã sinh viên:</p>
+                <input type="text" id="maSV">
+            </div>
+            <div class="input">
+                <p>Họ tên:</p>
+                <input type="text" id="hoten">
+            </div>
+            <div class="input">
+                <p>Email:</p>
+                <input type="text" id="email">
+            </div>
+            <div class="input">
+                <p>Số điện thoại:</p>
+                <input type="text" id="sdt">
+            </div>
+            <button id="add"><p>Thêm</p></button>
+        </div>
+        <table id="bangSinhVien">
+            <tr>
+                <th>Mã SV</th>
+                <th>Họ Tên</th>
+                <th>Email</th>
+                <th>SĐT</th>
+            </tr>
+        </table>
+        <script>
+            document.getElementById("add").onclick = function() {
+                let maSV = document.getElementById("maSV").value;
+                let hoten = document.getElementById("hoten").value;
+                let email = document.getElementById("email").value;
+                let sdt = document.getElementById("sdt").value;
+
+                let newRow = document.createElement("tr");
+
+                [maSV,hoten,email,sdt].forEach(function(value) {
+                    let cell = document.createElement("td");
+                    cell.textContent =value;
+                    newRow.appendChild(cell);
+                });
+                document.getElementById("bangSinhVien").appendChild(newRow);
+            };
+            document.getElementById("maSV").value="";
+            document.getElementById("hoten").value="";
+            document.getElementById("email").value="";
+            document.getElementById("sdt").value="";
+        </script>
+    </div>
+</body>
+</html>
