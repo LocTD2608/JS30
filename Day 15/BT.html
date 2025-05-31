@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BT JavaScript</title>
+</head>
+<body>
+    <script>
+        class Student {
+            constructor(id,name,email,age) {
+                this.id=id;
+            this.name=name;
+            this.email=email;
+            this.age=age;
+            }
+            displayInfo() {
+                console.log(this.id+"<br>" + this.name +"<br>"+this.email + "<br>"+ this.age)
+            } 
+        }
+
+        let student1 =new Student("ript001","Ngô Bá Khá","aeminhcuthethoi@gmail.com","24");
+        let student2 =new Student("ript002","Huấn Rose","abc@gmail.com","30");
+        student1.displayInfo()
+        student2.displayInfo()
+
+
+
+
+        class Employee {
+            constructor(name,position,baseSalary,workingDays) {
+                this.name = name;
+                this.position=position;
+                this.baseSalary=baseSalary;
+                this.workingDays=workingDays;
+                this.Salary=0;
+            }
+            calculateSalary(Salary)  {
+                this.Salary = this.baseSalary * this.workingDays;
+            }
+            show() {
+                console.log(this.name+"<br>"+this.position+"<br>"+this.baseSalary+"<br>"+this.workingDays+"<br>"+this.Salary)
+            }
+        }
+        let employee1 =new Employee("Messi","dance",1000,20);
+        employee1.calculateSalary();
+        employee1.show();
+
+
+
+        class Product {
+            constructor(id,name,price,quantity) {
+                this.id = id;
+                this.name = name;
+                this.price = price;
+                this.quantity = quantity;
+            }            
+        }
+        
+    </script>
+</body>
+</html>
