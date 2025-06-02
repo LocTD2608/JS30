@@ -89,61 +89,67 @@ table {
                 <th>Họ Tên</th>
                 <th>Email</th>
                 <th>SĐT</th>
-                <th>Hành Động</th>
+                <th>Hành Động
+                </th>
             </tr>
         </table>
         <script>
-            let editingRow = null;
+              let editingRow = null;
 
-            function resetForm() {
-            document.getElementById("maSV").value="";
-            document.getElementById("hoten").value="";
-            document.getElementById("email").value="";
-            document.getElementById("sdt").value="";
-            document.getElementById("add").innerHTML="<p>Thêm<p>";
-            editingRow = null;
-            }
+function resetForm() {
+    document.getElementById("maSV").value = "";
+    document.getElementById("hoten").value = "";
+    document.getElementById("email").value = "";
+    document.getElementById("sdt").value = "";
+    document.getElementById("add").innerHTML = "<p>Thêm</p>";
+    editingRow = null;
+}
 
-            document.getElementById("add").onclick = function() {
-                let maSV = document.getElementById("maSV").value;
-                let hoten = document.getElementById("hoten").value;
-                let email = document.getElementById("email").value;
-                let sdt = document.getElementById("sdt").value;
+document.getElementById("add").onclick = function () {
+    let maSV = document.getElementById("maSV").value;
+    let hoten = document.getElementById("hoten").value;
+    let email = document.getElementById("email").value;
+    let sdt = document.getElementById("sdt").value;
 
-                if (editingRow) {
-                    editingRow.cells[0].textContent = maSV;
-                    editingRow.cells[1].textContent = hoten;
-                    editingRow.cells[2].textContent = email;
-                    editingRow.cells[3].textContent = sdt;
-                } else {
-                    let newRow = document.createElement("tr");
-                    [maSV,hoten,email,sdt].forEach(function(value) {
-                    let cell = document.createElement("td");               
-                    cell.textContent =value;              
-                    newRow.appendChild(cell);
-                });
-           
-        
+    if (editingRow) {
+        editingRow.cells[0].textContent = maSV;
+        editingRow.cells[1].textContent = hoten;
+        editingRow.cells[2].textContent = email;
+        editingRow.cells[3].textContent = sdt;
+        resetForm(); // Sau khi sửa thì reset
+    } else {
+        let newRow = document.createElement("tr");
+
+        [maSV, hoten, email, sdt].forEach(function (value) {
+            let cell = document.createElement("td");
+            cell.textContent = value;
+            newRow.appendChild(cell);
+        });
+
         let actionCell = document.createElement("td");
         let editButton = document.createElement("button");
         editButton.textContent = "Sửa";
         editButton.style.backgroundColor = "#007bff";
         editButton.style.color = "white";
+
         editButton.onclick = function () {
-            document.getElementById("maSV").value=editingRow.cells[0].textContent;
-            document.getElementById("hoten").value=editingRow.cells[1].textContent;
-            document.getElementById("email").value=editingRow.cells[2].textContent;
-            document.getElementById("sdt").value=editingRow.cells[3].textContent;
-            document.getElementById("add").innerHTML="<p>Lưu<p>";
-            editingRow = newRow;
+            editingRow = this.parentElement.parentElement; // Xác định hàng đang sửa
+
+            document.getElementById("maSV").value = editingRow.cells[0].textContent;
+            document.getElementById("hoten").value = editingRow.cells[1].textContent;
+            document.getElementById("email").value = editingRow.cells[2].textContent;
+            document.getElementById("sdt").value = editingRow.cells[3].textContent;
+
+            document.getElementById("add").innerHTML = "<p>Lưu</p>";
         };
+
         actionCell.appendChild(editButton);
         newRow.appendChild(actionCell);
 
-            document.getElementById("bangSinhVien").appendChild(newRow);
-    };
-resetForm()
-    };
+        document.getElementById("bangSinhVien").appendChild(newRow);
+        resetForm();
+    }
+};
         </script>
     </div>
 </body>

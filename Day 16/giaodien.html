@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+    background-color: rgb(236, 234, 234);
+    font-family:Arial, Helvetica, sans-serif;
+}
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.table {
+    max-width: 55rem;
+    height: 33rem;
+    background-color: white;
+    justify-content: center;
+    margin-left: 520px;
+    z-index: 2;
+    border: 2px solid rgb(212, 212, 212);
+    border-radius:10px;
+}
+.input {    
+    padding-left: 50px;
+    padding-top: 20px;
+    font-weight:600 ;
+}
+.input input {
+    width: 80vh;
+    height: 30px;
+}
+button {
+    margin-left:50px ;
+    margin-top: 30px;
+    background-color: rgb(3, 172, 3);
+    color: white;
+    width: 90px;
+    border:1px solid white;
+    border-radius: 5px;
+}
+
+table,th,td {
+    border: 1px solid rgb(177, 177, 177);
+    border-collapse:collapse ;
+    margin-top: 20px;
+}
+
+th,td {
+    padding: 8px;
+    flex: 1;
+}
+table {
+    width: 95%;
+    background-color: rgb(201, 199, 199);
+}
+    </style>
+</head>
+<body>
+    <body>
+        <div class="container">
+            <div class="header">
+                <h1>Thêm sinh viên vào danh sách</h1>
+            </div>
+            <div class="table">
+                <div class="input">
+                    <p>ID</p>
+                    <input type="text" id="maSV">
+                </div>
+                <div class="input">
+                    <p>Tên:</p>
+                    <input type="text" id="hoten">
+                </div>
+                <div class="input">
+                    <p>Giá:</p>
+                    <input type="text" id="email">
+                </div>
+                <div class="input">
+                    <p>Số lượng:</p>
+                    <input type="text" id="sdt">
+                </div>
+                <button id="add"><p>Thêm</p></button>
+            </div>
+            <table id="bangSinhVien">
+                <tr>
+                    <th>ID</th>
+                    <th>Tên</th>
+                    <th>Giá</th>
+                    <th>Số lượng</th>
+                    <th>Hành Động</th>
+                </tr>
+            </table>
+            <script>
+                  let editingRow = null;
+    
+    function resetForm() {
+        document.getElementById("maSV").value = "";
+        document.getElementById("hoten").value = "";
+        document.getElementById("email").value = "";
+        document.getElementById("sdt").value = "";
+        document.getElementById("add").innerHTML = "<p>Thêm</p>";
+        editingRow = null;
+    }
+    
+    document.getElementById("add").onclick = function () {
+        let maSV = document.getElementById("maSV").value;
+        let hoten = document.getElementById("hoten").value;
+        let email = document.getElementById("email").value;
+        let sdt = document.getElementById("sdt").value;
+    
+        if (editingRow) {
+            editingRow.cells[0].textContent = maSV;
+            editingRow.cells[1].textContent = hoten;
+            editingRow.cells[2].textContent = email;
+            editingRow.cells[3].textContent = sdt;
+            resetForm(); 
+        } else {
+            let newRow = document.createElement("tr");
+    
+            [maSV, hoten, email, sdt].forEach(function (value) {
+                let cell = document.createElement("td");
+                cell.textContent = value;
+                newRow.appendChild(cell);
+            });
+    
+            let actionCell = document.createElement("td");
+            let editButton = document.createElement("button");
+            editButton.textContent = "Sửa";
+            editButton.style.backgroundColor = "yellow";
+            editButton.style.color = "black";
+    
+            editButton.onclick = function () {
+                editingRow = this.parentElement.parentElement; 
+    
+                document.getElementById("maSV").value = editingRow.cells[0].textContent;
+                document.getElementById("hoten").value = editingRow.cells[1].textContent;
+                document.getElementById("email").value = editingRow.cells[2].textContent;
+                document.getElementById("sdt").value = editingRow.cells[3].textContent;
+    
+                document.getElementById("add").innerHTML = "<p>Lưu</p>";
+            };
+            let deleteButton = document.createElement("button");
+            deleteButton.textContent = "Xoá";
+            deleteButton.style.backgroundColor = "#dc3545"; // màu đỏ
+            deleteButton.style.color = "white";
+            deleteButton.onclick = function () {
+    
+                let row = this.parentElement.parentElement;    
+                row.remove(); // Xoá dòng khỏi bảng    
+                resetForm();  // Nếu đang sửa dòng đó thì cũng reset
+};
+    
+            actionCell.appendChild(editButton);
+            actionCell.appendChild(deleteButton);
+            newRow.appendChild(actionCell);
+    
+            document.getElementById("bangSinhVien").appendChild(newRow);
+            resetForm();
+        }
+    };
+            </script>
+        </div>
+</body>
+</html>
