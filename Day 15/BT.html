@@ -47,16 +47,51 @@
         employee1.show();
 
 
-
         class Product {
             constructor(id,name,price,quantity) {
                 this.id = id;
                 this.name = name;
                 this.price = price;
                 this.quantity = quantity;
-            }            
+            }  
+            show() {
+                console.log(this.id+"<br>"+this.name+"<br>"+this.price+"<br>"+this.quantity)
+            }
+
         }
-        
+        let productList = [];
+        function themSanPham(id,name,price,quantity) {
+            const sp = new Product(id,name,price,quantity);
+            productList.push(sp);
+        }
+        function tongGiaTriTonKho() {
+            let tong = 0;
+            for (let sp of productList) {
+                tong += sp.price * sp.quantity;
+            }
+            return tong;
+    }
+    function giacaonhat() {
+                let mostexpensive = productList[0];
+                for (let product of productList) {
+                    if (product.price >mostexpensive.price) {
+                        mostexpensive = product;
+                    }
+                }
+                return mostexpensive;
+        }
+
+    let products = [
+  { id: 1, name: 'Laptop', price: 1000, quantity: 5 },
+  { id: 2, name: 'Phone', price: 800, quantity: 10 },
+  { id: 3, name: 'Tablet', price: 1200, quantity: 3 }
+];
+for (let p of products) {
+    themSanPham(p.id,p.name,p.price,p.quantity);
+
+}
+console.log("Tổng giá trị hàng tồn:", tongGiaTriTonKho()); 
+console.log("Sản phẩm có giá cao nhất:", giacaonhat());
     </script>
 </body>
 </html>
