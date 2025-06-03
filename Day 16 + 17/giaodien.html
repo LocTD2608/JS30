@@ -38,6 +38,8 @@ table {
 <body>
     <div class="header"><h1>Quản lí sản phẩm</h1></div>
     <div class="container">
+        <input type="text" id="searchID">
+        <button onclick="timkiemSanPham()">Search</button>
         <input type="text" id="id">
         <input type="text" id ="name">
         <input type="text" id="price">
@@ -182,8 +184,25 @@ document.getElementById("bangquanli").appendChild(newRow);
     document.getElementById("sanPhamDatNhat").innerHTML =
         `<b>Sản phẩm đắt nhất:</b> ${tenSanPhamDatNhat} (${maxPrice.toLocaleString()} VNĐ)`;
 }
-
 };
+function timkiemSanPham() {
+    let sreachID = document.getElementById("searchID").value.trim();
+    let rows = document.querySelectorAll("#bangquanli tr");
+    let found = false;
+    rows.forEach(row => {
+        let id = row.cells[0]?.textContent;
+        if (id === sreachID) {
+            row.style.display="";
+            found=true;
+        } else {
+            row.style.display="none";
+        }
+    });
+
+    if (!found) {
+        alert("Không tìm thấy sản phẩm với mã" + sreachID);
+    }
+}
 
     </script>
 </body>
