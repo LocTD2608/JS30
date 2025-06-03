@@ -5,45 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        body {
-    background-color: rgb(236, 234, 234);
-    font-family:Arial, Helvetica, sans-serif;
-}
-.header {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.table {
-    max-width: 55rem;
-    height: 33rem;
-    background-color: white;
-    justify-content: center;
-    margin-left: 520px;
-    z-index: 2;
-    border: 2px solid rgb(212, 212, 212);
-    border-radius:10px;
-}
-.input {    
-    padding-left: 50px;
-    padding-top: 20px;
-    font-weight:600 ;
-}
-.input input {
-    width: 80vh;
-    height: 30px;
-}
-button {
-    margin-left:50px ;
-    margin-top: 30px;
-    background-color: rgb(3, 172, 3);
-    color: white;
-    width: 90px;
-    border:1px solid white;
-    border-radius: 5px;
-}
-
-table,th,td {
+        .container {
+            display: flex;
+            gap: 15px;
+            padding-bottom:20px ;
+        }
+        input {
+            width: 150px;
+            height: 20px;
+        }
+        button {
+            width: 60px;
+            height: 30px;
+        }
+        table,th,td {
     border: 1px solid rgb(177, 177, 177);
     border-collapse:collapse ;
     margin-top: 20px;
@@ -57,111 +32,159 @@ table {
     width: 95%;
     background-color: rgb(201, 199, 199);
 }
+
     </style>
 </head>
 <body>
-    <body>
-        <div class="container">
-            <div class="header">
-                <h1>Thêm sinh viên vào danh sách</h1>
-            </div>
-            <div class="table">
-                <div class="input">
-                    <p>ID</p>
-                    <input type="text" id="maSV">
-                </div>
-                <div class="input">
-                    <p>Tên:</p>
-                    <input type="text" id="hoten">
-                </div>
-                <div class="input">
-                    <p>Giá:</p>
-                    <input type="text" id="email">
-                </div>
-                <div class="input">
-                    <p>Số lượng:</p>
-                    <input type="text" id="sdt">
-                </div>
-                <button id="add"><p>Thêm</p></button>
-            </div>
-            <table id="bangSinhVien">
-                <tr>
-                    <th>ID</th>
-                    <th>Tên</th>
-                    <th>Giá</th>
-                    <th>Số lượng</th>
-                    <th>Hành Động</th>
-                </tr>
-            </table>
-            <script>
-                  let editingRow = null;
-    
-    function resetForm() {
-        document.getElementById("maSV").value = "";
-        document.getElementById("hoten").value = "";
-        document.getElementById("email").value = "";
-        document.getElementById("sdt").value = "";
-        document.getElementById("add").innerHTML = "<p>Thêm</p>";
-        editingRow = null;
-    }
-    
-    document.getElementById("add").onclick = function () {
-        let maSV = document.getElementById("maSV").value;
-        let hoten = document.getElementById("hoten").value;
-        let email = document.getElementById("email").value;
-        let sdt = document.getElementById("sdt").value;
-    
-        if (editingRow) {
-            editingRow.cells[0].textContent = maSV;
-            editingRow.cells[1].textContent = hoten;
-            editingRow.cells[2].textContent = email;
-            editingRow.cells[3].textContent = sdt;
-            resetForm(); 
-        } else {
-            let newRow = document.createElement("tr");
-    
-            [maSV, hoten, email, sdt].forEach(function (value) {
-                let cell = document.createElement("td");
-                cell.textContent = value;
-                newRow.appendChild(cell);
-            });
-    
-            let actionCell = document.createElement("td");
-            let editButton = document.createElement("button");
-            editButton.textContent = "Sửa";
-            editButton.style.backgroundColor = "yellow";
-            editButton.style.color = "black";
-    
-            editButton.onclick = function () {
-                editingRow = this.parentElement.parentElement; 
-    
-                document.getElementById("maSV").value = editingRow.cells[0].textContent;
-                document.getElementById("hoten").value = editingRow.cells[1].textContent;
-                document.getElementById("email").value = editingRow.cells[2].textContent;
-                document.getElementById("sdt").value = editingRow.cells[3].textContent;
-    
-                document.getElementById("add").innerHTML = "<p>Lưu</p>";
-            };
-            let deleteButton = document.createElement("button");
-            deleteButton.textContent = "Xoá";
-            deleteButton.style.backgroundColor = "#dc3545"; // màu đỏ
-            deleteButton.style.color = "white";
-            deleteButton.onclick = function () {
-    
-                let row = this.parentElement.parentElement;    
-                row.remove(); // Xoá dòng khỏi bảng    
-                resetForm();  // Nếu đang sửa dòng đó thì cũng reset
-};
-    
-            actionCell.appendChild(editButton);
-            actionCell.appendChild(deleteButton);
-            newRow.appendChild(actionCell);
-    
-            document.getElementById("bangSinhVien").appendChild(newRow);
-            resetForm();
+    <div class="header"><h1>Quản lí sản phẩm</h1></div>
+    <div class="container">
+        <input type="text" id="id">
+        <input type="text" id ="name">
+        <input type="text" id="price">
+        <input type="text" id="quanlity">
+    </div>
+    <button id="add">Thêm</button>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Tên</th>
+            <th>Giá</th>
+            <th>Số lượng</th>
+            <th>Tổng giá trị</th>
+            <th>Hành động</th>
+        </tr>
+    </thead>
+    <tbody id="bangquanli">
+    </tbody>
+    </table>
+    <div id="thongtin">
+        <p id="tongGiaTriTonKho"><b>Tổng giá trị tồn kho:</b></p>
+        <p id="sanPhamDatNhat"><b>Sản phẩm đắt nhất:</b></p>
+    </div>
+    <script>
+          let editingRow = null;
+
+function resetForm() {
+    document.getElementById("id").value = "";
+    document.getElementById("name").value = "";
+    document.getElementById("price").value = "";
+    document.getElementById("quanlity").value = "";
+    document.getElementById("add").innerHTML = "<p>Thêm</p>";
+    editingRow = null;
+}
+document.getElementById("add").onclick = function () {
+    let ID = document.getElementById("id").value;
+    let name = document.getElementById("name").value;
+    let price = document.getElementById("price").value;
+    let quanlity = document.getElementById("quanlity").value;
+if (editingRow) {
+        editingRow.cells[0].textContent = ID;
+        editingRow.cells[1].textContent = name;
+        editingRow.cells[2].textContent = price;
+        editingRow.cells[3].textContent = quanlity;
+        capNhatThongTin();
+        resetForm(); // Sau khi sửa thì reset
+    } else {
+        let tableRows = document.querySelectorAll("#bangquanli tr");
+    let isDuplicate = false;
+
+    tableRows.forEach(function (row) {
+        let existingID = row.cells[0]?.textContent;
+        if (existingID === ID) {
+            isDuplicate = true;
         }
+    });
+
+    if (isDuplicate) {
+        alert("ID sản phẩm đã tồn tại!");
+        return; // Không thêm dòng mới
+    }
+
+
+        let newRow = document.createElement("tr");
+newRow.style.backgroundColor = "white";
+
+// Thêm các ô: ID, Tên, Giá, Số lượng
+[ID, name, price, quanlity].forEach(function (value) {
+    let cell = document.createElement("td");
+    cell.textContent = value;
+    newRow.appendChild(cell);
+});
+
+// Tính tổng giá trị và thêm ô Tổng giá trị
+let total = parseFloat(price) * parseFloat(quanlity);
+let totalCell = document.createElement("td");
+totalCell.textContent = total;
+newRow.appendChild(totalCell);
+
+// Tạo nút sửa trong ô Hành động
+let actionCell = document.createElement("td");
+let editButton = document.createElement("button");
+editButton.textContent = "Sửa";
+editButton.style.backgroundColor = "yellow";
+editButton.style.color = "black";
+
+editButton.onclick = function () {
+    editingRow = this.parentElement.parentElement;
+    document.getElementById("id").value = editingRow.cells[0].textContent;
+    document.getElementById("name").value = editingRow.cells[1].textContent;
+    document.getElementById("price").value = editingRow.cells[2].textContent;
+    document.getElementById("quanlity").value = editingRow.cells[3].textContent;
+    document.getElementById("add").innerHTML = "<p>Lưu</p>";
+};
+let deleteButton = document.createElement("button");
+deleteButton.textContent="Xoá";
+deleteButton.style.backgroundColor = "red";
+deleteButton.style.color ="white";
+deleteButton.style.margin="15px";
+deleteButton.onclick = function() {
+let row = this.parentElement.parentElement;
+row.remove();
+capNhatThongTin();
+resetForm();
+}
+
+actionCell.appendChild(editButton);
+actionCell.appendChild(deleteButton);
+newRow.appendChild(actionCell);
+
+// Thêm dòng mới vào tbody
+document.getElementById("bangquanli").appendChild(newRow);
+
+        document.getElementById("bangquanli").appendChild(newRow);
+        capNhatThongTin();
+        resetForm();
     };
-            </script>
-        </div>
+    function capNhatThongTin() {
+    let rows = document.querySelectorAll("#bangquanli tr");
+    let tongGiaTri = 0;
+    let maxPrice = 0;
+    let tenSanPhamDatNhat = "";
+
+    rows.forEach(row => {
+        let priceText = row.cells[2]?.textContent || "0";
+        let price = parseFloat(priceText.replace(/[^0-9]/g, ""));
+        let quantity = parseFloat(row.cells[3]?.textContent) || 0;
+
+        if (!isNaN(price) && !isNaN(quantity)) {
+            tongGiaTri += price * quantity;
+
+            if (price > maxPrice) {
+                maxPrice = price;
+                tenSanPhamDatNhat = row.cells[1]?.textContent || "";
+            }
+        }
+    });
+
+    document.getElementById("tongGiaTriTonKho").innerHTML =
+        `<b>Tổng giá trị tồn kho:</b> ${tongGiaTri.toLocaleString()} VNĐ`;
+
+    document.getElementById("sanPhamDatNhat").innerHTML =
+        `<b>Sản phẩm đắt nhất:</b> ${tenSanPhamDatNhat} (${maxPrice.toLocaleString()} VNĐ)`;
+}
+
+};
+
+    </script>
 </body>
 </html>
