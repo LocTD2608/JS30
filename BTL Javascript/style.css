@@ -17,10 +17,10 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    position: sticky;
     padding: 10px 180px;
     border-bottom: 1px solid #ddd;
     height: 60px;
-    
   }
   
   .menu {
@@ -116,25 +116,31 @@
 }
 
 .carousel-dots {
-    text-align: center;
-    padding: 10px 0;
-    background-color: #f1f1f1;
+  position: absolute; /* Đưa nó nổi lên trên ảnh */
+  bottom: 20px; /* Khoảng cách so với đáy ảnh */
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: transparent; /* bỏ nền */
+  padding: 5px 10px;
+  border-radius: 20px;
+  z-index: 10;
 }
 
 .dot {
-    height: 12px;
-    width: 12px;
-    margin: 0 5px;
-    background-color: #bbb;
-    border-radius: 50%;
-    display: inline-block;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+  height: 10px;
+  width: 10px;
+  margin: 0 4px;
+  background-color: rgba(255, 255, 255, 0.5); /* chấm mờ màu trắng */
+  border-radius: 50%;
+  display: inline-block;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 .dot.active, .dot:hover {
-    background-color: #717171;
-  }
+  background-color: rgba(255, 255, 255, 0.9); /* sáng hơn khi hover hoặc active */
+}
+
 
 .menu-button {
   display: flex;
@@ -157,21 +163,21 @@
 .gray-hr {
   border: none;
   border: 1px solid #ccc;
-  max-width: 1200px;
+  max-width: 1300px;
   margin-top: 10px;
 }
 
 .nav {
-  padding-left: 400px;
-  padding-right:400px;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 .tennis {
-  font-size: 17px;
+  font-size: 18px;
   padding-top: 40px;
   padding-left: 0;
 }
 .tennis-content {
-  font-size: 17px;
+  font-size: 18px;
   font-weight: 500;
   padding-top: 20px;
   }
@@ -203,4 +209,46 @@ color:rgb(97, 97, 255);
   padding-bottom:70px ;
   padding-right:31px;
   padding-left:31px;
+}
+.all {
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
+  height: 53px;
+  width: 190px;
+  margin-left: 670px;
+  border-radius:12px;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-bottom: 50px;
+}
+.all:hover {
+  background-color: #090909;
+  color: white;
+  transition: background-color 1s ease;
+  transition: color 0,7s ease;
+}
+.nav-1 {
+  padding-left: 120px;
+  padding-top: 60px;
+
+}
+
+.product-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap:5px;
+}
+.product-list-img {
+  background-color: #eeeded;
+  padding: 10px;
+  border-radius: 15px;
+}
+.product-list-content p {
+display: flex;
+justify-content: center;
+}
+#low {
+  padding-right: 500px;
 }
