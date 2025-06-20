@@ -199,6 +199,8 @@
   flex-wrap: wrap;
   text-decoration: none;
   color: black;
+  padding-top:12px;
+  padding-bottom: 10px;
 }
 .product:hover a {
 color:rgb(153, 153, 250);
@@ -252,4 +254,19 @@ justify-content: center;
 }
 #low {
   padding-right: 500px;
+}
+#pickleball {
+  gap: 0;
+}
+.img-content {
+  width: 100%;    /* kích thước phần muốn hiển thị */
+  height: 300px;
+  overflow: hidden; /* ẩn phần ảnh bị tràn ra ngoài */
+  position: relative;
+}
+
+.img-content img {
+  position: absolute;
+  top: -50px;      /* dịch ảnh lên hoặc xuống để "chọn vùng" */
+  left: -30px;     /* dịch ảnh trái/phải */
 }
