@@ -14,7 +14,9 @@
         <div class="login">
             <p>Authentic Shoes - Nhà sưu tầm và phân phối chính hãng các thương hiệu thời trang quốc tế hàng đầu Việt
                 Nam</p>
-            <div class="login-click"><a href="login.html">Đăng nhập</a></div>
+            <div class="login-click" id="loginSection">
+                <a href="login.html" id="loginLink">Đăng nhập</a>
+            </div>
         </div>
         <div class="header">
             <div class="navbar">
@@ -440,5 +442,22 @@
         <div class="all"><i>Xem tất cả ></i></div>
         <div><img src="https://authentic-shoes.com/wp-content/uploads/2025/03/Anh-man-hinh-2025-03-12-luc-00.08.53.png" alt="ảnh chùm" height ="500px" width="100%"></div>
     </div>
+    <script>
+        document.addEventListener("DOMContentLoaded",function(){
+            const loginSection = document.getElementById("loginSection");
+            const loginLink = document.getElementById("loginLink");
+            const isLoggedIn = localStorage.getItem("LoggedIn") === "true";
+            if (isLoggedIn) {
+                loginSection.innerHTML = `<span>Xin Chào Lộc | <a href ="#" id = "logoutLink">Đăng xuất</a></span>`;
+                const logoutLink = document.getElementById("logoutLink");
+                logoutLink.addEventListener("click",function(){
+                    localStorage.removeItem("LoggedIn");
+                    window.location.href = "BTL.html";
+                });
+            } else {
+                loginLink.href="login.html";
+            }
+        });
+    </script>
 </body>
 </html>

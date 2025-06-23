@@ -20,6 +20,7 @@
         <input type="password" name="password" id="password_login">
       </label>
       <button class="submit" type="button" onclick="login()">Đăng nhập</button>
+      <p id="message" style="color:red;"></p>
       <p class="forgot-pass">Forgot Password ?</p>
 
       <div class="social-media">
@@ -70,6 +71,22 @@
       </div>
     </div>
   </div>
-<script type="text/javascript" src="script.js"></script>
+<script>
+ if (localStorage.getItem('LoggedIn') === "true") {
+	window.location.href = "BTL.html";
+}
+var ten_dang_nhap_element =document.getElementById("name_login");
+var mat_khau_element = document.getElementById("password_login");
+function login() {
+	var ten_dang_nhap = ten_dang_nhap_element.value;
+	var mat_khau = mat_khau_element.value;
+	if (ten_dang_nhap === "truongthk024@gmail.com" && mat_khau === "123456") {
+		localStorage.setItem('LoggedIn','true');
+		window.location.href = "BTL.html";
+	}
+	else {
+		message.textContent = "Tài khoản hoặc mật khẩu không đúng !";
+	}
+}</script>
 </body>
 </html>
