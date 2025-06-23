@@ -67,11 +67,19 @@
           <span>Confirm Password</span>
           <input type="password">
         </label>
-        <button type="button" class="submit">Sign Up Now</button>
+        <button type="button" class="submit" onclick="register()">Sign Up Now</button>
       </div>
     </div>
   </div>
 <script>
+  document.querySelector('.img-btn').addEventListener('click', function()
+	{
+		document.querySelector('.cont').classList.toggle('s-signup')
+	}
+);
+
+
+
  if (localStorage.getItem('LoggedIn') === "true") {
 	window.location.href = "BTL.html";
 }
@@ -80,13 +88,44 @@ var mat_khau_element = document.getElementById("password_login");
 function login() {
 	var ten_dang_nhap = ten_dang_nhap_element.value;
 	var mat_khau = mat_khau_element.value;
-	if (ten_dang_nhap === "truongthk024@gmail.com" && mat_khau === "123456") {
-		localStorage.setItem('LoggedIn','true');
-		window.location.href = "BTL.html";
-	}
+  const defaultEmail = "truongthk024@gmail.com";
+  const defaultPassword = "123456";
+  const userEmail = localStorage.getItem("UserEmail");
+  const userPassword = localStorage.getItem("UserPassword");
+  if (
+    (ten_dang_nhap === defaultEmail && mat_khau === defaultPassword) || (ten_dang_nhap === userEmail && mat_khau === userPassword)
+  ) {
+    localStorage.setItem("LoggedIn","true");
+    localStorage.setItem("UserEmail",ten_dang_nhap);
+    window.location.href = "BTL.html";
+  }
 	else {
 		message.textContent = "Tài khoản hoặc mật khẩu không đúng !";
 	}
-}</script>
+}
+
+
+
+function register() {
+  const signUpForm = document.querySelector(".sign-up");
+  const name = signUpForm.querySelectorAll("input")[0].value;
+  const email = signUpForm.querySelectorAll("input")[1].value;
+  const password = signUpForm.querySelectorAll("input")[2].value;
+  const ConfirmPassword = signUpForm.querySelectorAll("input")[3].value;
+
+  if (!name || !email || !password || !ConfirmPassword) {
+    alert("Vui lòng điền đầy đủ thông tin")    // Nếu có bất kì ô nào trống -> cảnh báo và return
+    return;
+  }
+  if (!password || ! ConfirmPassword) {
+    alert("Mật khẩu xác nhận không khớp.");
+    return;
+  }
+  localStorage.setItem("UserEmail",email);
+  localStorage.setItem("UserPassword",password);       //Lưu tài khoản và mật khẩu vào localStorage LoggedIn = "true" để biết rằng người dùng đã đăng nhập sau khi đăng kí
+  localStorage.setItem("LoggedIn","true");
+  window.location.href = "BTL.html";
+}
+</script>
 </body>
 </html>
