@@ -260,13 +260,14 @@ justify-content: center;
 }
 .img-content {
   width: 100%;    /* kích thước phần muốn hiển thị */
-  height: 300px;
+  height: 400px;
   overflow: hidden; /* ẩn phần ảnh bị tràn ra ngoài */
   position: relative;
 }
 
 .img-content img {
   position: absolute;
-  top: -50px;      /* dịch ảnh lên hoặc xuống để "chọn vùng" */
+  top: -100px;      /* dịch ảnh lên hoặc xuống để "chọn vùng" */
   left: -30px;     /* dịch ảnh trái/phải */
 }
+
