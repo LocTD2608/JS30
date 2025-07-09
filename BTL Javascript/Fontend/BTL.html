@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Authentic Shoes Sneaker giày chính hãng</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="login">
+            <p>Authentic Shoes - Nhà sưu tầm và phân phối chính hãng các thương hiệu thời trang quốc tế hàng đầu Việt
+                Nam</p>
+            <div class="login-click" id="loginSection">
+                <a href="login.html" id="loginLink">Đăng nhập</a>
+            </div>
+        </div>
+        <div class="header">
+            <div class="navbar">
+                <div class="menu">
+                    <img src="Screenshot 2025-05-28 141345.png" alt="" height="53px">
+                    <div class="menu-item">TRANG CHỦ</div>
+                    <div class="menu-item">GIÀY <i class="fas fa-chevron-down"></i></div>
+                    <div class="menu-item">QUẦN ÁO <i class="fas fa-chevron-down"></i></div>
+                    <div class="menu-item">PHỤ KIỆN <i class="fas fa-chevron-down"></i></div>
+                    <div class="menu-item">TIN TỨC – SỰ KIỆN</div>
+                    <div class="menu-item">LIÊN HỆ <i class="fas fa-chevron-down"></i></div>
+                    <div class="menu-item">SALE</div>
+                </div>
+
+                <div class="icons">
+                    <i class="fas fa-search"></i>
+                    <div class="divider"></div>
+                    <i class="fas fa-shopping-basket"></i>
+                </div>
+            </div>
+            <div class="carousel-container">
+                <div class="carousel-slides">
+                    <img src="pickleball.png" alt="Image 1" href="">
+                    <img src="https://authentic-shoes.com/wp-content/uploads/2025/01/the-north--scaled.webp"
+                        alt="Image 2">
+                    <img src="https://authentic-shoes.com/wp-content/uploads/2024/12/Giay-Nau.webp" alt="Image 3">
+                    <img src="https://authentic-shoes.com/wp-content/uploads/2024/10/20240926111113-0.webp"
+                        alt="Image 4">
+                    <img src="https://authentic-shoes.com/wp-content/uploads/2024/09/20240904091932-1.webp"
+                        alt="Image 5">
+                    <img src="https://authentic-shoes.com/wp-content/uploads/2024/01/AJ1_Yellow_Ochre_Release_DayPrim-2048x625.webp"
+                        alt="Image 6">
+                </div>
+                <button class="carousel-button prev-button">&#10094;</button>
+                <button class="carousel-button next-button">&#10095;</button>
+
+                <div class="carousel-dots">
+                    <span class="dot active" onclick="currentSlide(0)"></span>
+                    <span class="dot" onclick="currentSlide(1)"></span>
+                    <span class="dot" onclick="currentSlide(2)"></span>
+                    <span class="dot" onclick="currentSlide(3)"></span>
+                    <span class="dot" onclick="currentSlide(4)"></span>
+                    <span class="dot" onclick="currentSlide(5)"></span>
+                </div>
+            </div>
+            <script>
+                const slides = document.querySelector('.carousel-slides');
+                const dotsContainer = document.querySelector('.carousel-dots');
+                const dots = document.querySelectorAll('.dot');
+                const totalSlides = slides.children.length;
+                let currentIndex = 0;
+
+                function updateCarousel() {
+                    slides.style.transform = `translateX(${-currentIndex * 100}%)`;
+                    dots.forEach((dot, index) => {
+                        dot.classList.toggle('active', index === currentIndex);
+                    });
+                }
+
+                function nextSlide() {
+                    currentIndex = (currentIndex + 1) % totalSlides;
+                    updateCarousel();
+                }
+
+                function prevSlide() {
+                    currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+                    updateCarousel();
+                }
+
+                function currentSlide(n) {
+                    currentIndex = n;
+                    updateCarousel();
+                }
+
+                document.querySelector('.prev-button').addEventListener('click', prevSlide);
+                document.querySelector('.next-button').addEventListener('click', nextSlide)
+
+                updateCarousel();
+            </script>
+            <div class="menu-button">
+                <div class="button-click">
+                    <p>Giày Sneaker</p>
+                </div>
+                <div class="button-click">
+                    <p>Quần áo</p>
+                </div>
+                <div class="button-click">
+                    <p>Phụ kiện</p>
+                </div>
+                <div class="button-click">
+                    <p>Vợt pickleball</p>
+                </div>
+            </div>
+            <hr class="gray-hr">
+        </div>
+        <div class="nav">
+            <div class="tennis">
+                <b>Giày tennis chính hãng</b>
+            </div>
+            <div class="tennis-content">
+                <p>Mua ngay các phiên bản giày Pickleball và Tennis mới nhất đến từ các thuơng hiệu
+                    Asics,Nike,Lacoste,... chính hãng 2025</p>
+            </div>
+        </div>
+        <div class="article">
+            <div class="product">
+                <img src="https://authentic-shoes.com/wp-content/uploads/2023/07/dr6191-101_blanc_1-600x268.png"
+                    alt="ảnh 1" height="150px" width="300px" class="hinh-giay">
+                <u>Giày Nike Air Zoom</u>
+                <a href="https://authentic-shoes.com/products/giay-nike-zoom-vapor-pro-2-hc-white-dr6191-101">Giày Nike Zoom Vapor Pro 2 HC ‘White’ DR6191-101</a>
+                <b>3,100,000 ₫</b>
+            </div>
+            <div class="product">
+                <img src="https://authentic-shoes.com/wp-content/uploads/2025/02/1041A481-100.png" alt="ảnh 2"
+                    height="150px" width="300px" class="hinh-giay">
+                <u>Giày Asics Gel-Resolution</u>
+                <a href="https://authentic-shoes.com/products/giay-asics-gel-resolution-x-white-black-1041a481-100">Giày Asics Gel Resolution X ‘White Black’ 1041A481-100</a>
+                <b>3,700,000 ₫</b>
+            </div>
+            <div class="product">
+                <img src="https://authentic-shoes.com/wp-content/uploads/2025/01/M-ZOOM-VAPOR-PRO-3-HC.png" alt="ảnh 3"
+                    height="150px" width="300px" class="hinh-giay">
+                <u>Giày Sneaker</u>
+                <a href="https://authentic-shoes.com/products/giay-nike-air-zoom-vapor-pro-3-binary-blue-fz2161-100">Giày Nike Air Zoom Vapor Pro 3 ‘Binary Blue’ FZ2161-100</a>
+                <b>3,500,000 ₫</b>
+            </div>
+            <div class="product">
+                <img src="https://authentic-shoes.com/wp-content/uploads/2025/04/3A0S25B932-JET_MACH_PKL_MEN-7002.png"
+                    alt="ảnh 4" height="150px" width="300px" class="hinh-giay">
+                <u>Babolat Jet Mach</u>
+                <a href="https://authentic-shoes.com/products/giay-babolat-jet-mach-fluo-yellow-3a0s25b932-7002">Giày Babolat Jet Mach ‘Fluo Yellow’ 3A0S25B932-7002</a>
+                <b>4,900,000 ₫</b>
+            </div>
+        </div>
+        <div class="article">
+            <div class="product">
+                <img src="https://authentic-shoes.com/wp-content/uploads/2024/12/618XlKgHnwL._AC_UF10001000_QL80.png"
+                    alt="ảnh 5" height="150px" width="300px" class="hinh-giay">
+                <u>Giày Lacoste Nam</u>
+                <a href="https://authentic-shoes.com/products/giay-babolat-jet-mach-3-red-white-30f22629-1005">Giày Babolat Jet Mach 3 ‘Red White’ 30F22629-1005</a>
+                <b>4,900,000 ₫</b>
+            </div>
+            <div class="product">
+                <img src="https://authentic-shoes.com/wp-content/uploads/2024/08/47sma0101-rs7-sub1.2024011801584-600x306.png"
+                    alt="ảnh 6" height="150px" width="300px" class="hinh-giay">
+                <u>Babolat Jet Mach</u>
+                <a href="https://authentic-shoes.com/products/giay-lacoste-tennis-ag-lt23-ultra-red-black-47sma0101-r7s">Giày Lacoste Tennis AG-LT23 Ultra ‘Red Black’ 47SMA0101-R7S</a>
+                <b>4,900,000 ₫</b>
+            </div>
+            <div class="product">
+                <img src="https://authentic-shoes.com/wp-content/uploads/2025/04/1041A522_966_SR_RT_GLB.png"
+                    alt="ảnh 7" height="150px" width="300px" class="hinh-giay">
+                <u>Giày Sneaker</u>
+                <a href="https://authentic-shoes.com/products/giay-asics-court-ff-3-novak-white-electric-red-1041a522-966">Giày Asics Court FF 3 Novak ‘White Electric Red’ 1041A522-966</a>
+                <b>4,500,000 ₫</b>
+            </div>
+            <div class="product">
+                <img src="https://authentic-shoes.com/wp-content/uploads/2025/02/246069-PNK0.png"
+                    alt="ảnh 8" height="150px" width="300px" class="hinh-giay">
+                <u>Giày PickleBall</u>
+                <a href="https://authentic-shoes.com/products/giay-skechers-viper-court-pro-pink-246069-pnk">Giày Skechers Viper Court Pro ‘Pink’ 246069-PNK</a>
+                <b>4,900,000 ₫</b>
+            </div>
+        </div>
+        <div class="all"><i>Xem tất cả ></i></div>
+        <hr class="gray-hr">
+        <div class="nav-1">
+            <b>Thương Hiệu Nổi Bật</b>
+            <p>Mặt hàng giày các thương hiệu nổi bật</p>
+        </div>
+        <div class="product-list">
+            <div class="product-list-content"><img src="https://authentic-shoes.com/wp-content/uploads/2025/01/Giay_Samba-authentic-Shoes.png" alt="ảnh 1" height="100px" width="230px" class="product-list-img">
+                <p>Adidas</p>
+            </div>
+            <div class="product-list-content"><img src="https://authentic-shoes.com/wp-content/uploads/2025/01/Giay_yeezy_350_chinh_hang-.png" alt="ảnh 2" height="100px" width="230px" class="product-list-img">
+                <p>Yeezy 350</p>
+            </div>
+            <div class="product-list-content">
+                <img src="https://authentic-shoes.com/wp-content/uploads/2025/01/Nike_Dunk_Low-removebg.png" alt="ảnh 3" height="100px" width="230px" class="product-list-img">
+                <p>Nike</p>
+            </div>
+            <div class="product-list-content">
+                <img src="https://authentic-shoes.com/wp-content/uploads/2025/01/Giay_Jordan_1_low_chinh_hang-removebg.png" alt="ảnh 4" height="100px" width="230px" class="product-list-img">
+                <p>Jordan 1</p>  
+            </div>
+            <div class="product-list-content">
+                <img src="https://authentic-shoes.com/wp-content/uploads/2025/01/Yeezy-Slide-.png" alt="ảnh 5" height="100px" width="230px"
+                class="product-list-img">
+                <p>Yeezy Slide</p>
+            </div> 
+        </div>
+        <div class="product-list">
+            <div class="product-list-content"><img src="https://authentic-shoes.com/wp-content/uploads/2025/01/air-force-1.png" alt="ảnh 1" height="100px" width="230px" class="product-list-img">
+                <p>Air Force 1</p>
+            </div>
+            <div class="product-list-content"><img src="https://authentic-shoes.com/wp-content/uploads/2024/01/Giay-New-Balance-530-Retro-Runni-removebg-preview-300x137.png" alt="ảnh 2" height="100px" width="230px" class="product-list-img">
+                <p>New Balance</p>
+            </div>
+            <div class="product-list-content">
+                <img src="https://authentic-shoes.com/wp-content/uploads/2024/12/FN4735_101.png.webp" alt="ảnh 3" height="100px" width="230px" class="product-list-img">
+                <p>Pickedball</p>
+            </div>
+            <div class="product-list-content">
+                <img src="https://authentic-shoes.com/wp-content/uploads/2025/01/Giay_Onit-removebg.png" alt="ảnh 4" height="100px" width="230px" class="product-list-img">
+                <p>Onitsuka Tiger</p>  
+            </div>
+            <div class="product-list-content">
+                <img src="https://authentic-shoes.com/wp-content/uploads/2025/01/Giay-bong-ro-Nike.png" alt="ảnh 5" height="100px" width="230px"
+                class="product-list-img">
+                <p>Bóng rổ Nike</p>
+            </div> 
+        </div>
+        <div class="product-list" id="low">
+            <div class="product-list-content"><img src="https://authentic-shoes.com/wp-content/uploads/2024/01/Screenshot-2023-09-11-at-14.59.4-removebg-preview-300x159.png" alt="ảnh 1" height="100px" width="230px" class="product-list-img">
+                <p>Li-ning</p>
+            </div>
+            <div class="product-list-content"><img src="https://authentic-shoes.com/wp-content/uploads/2025/01/Giay-Asics-.png" alt="ảnh 2" height="100px" width="230px" class="product-list-img">
+                <p>Giày Asics</p>
+            </div>
+            <div class="product-list-content">
+                <img src="https://authentic-shoes.com/wp-content/uploads/2024/01/nike-kobe-6-protro-reverse-grinc-removebg-preview-300x149.png" alt="ảnh 3" height="100px" width="230px" class="product-list-img">
+                <p>Kobe</p>
+            </div>
+            </div>
+            <div class="img-content"><img src="https://authentic-shoes.com/wp-content/uploads/2025/06/BABOLAT_2024_2025_209-2-1.webp" alt="ảnh chùm" height="400px"
+                width="100%"></div>
+            <div class="nav-1">
+                <b>Most Popular Sneaker</b>
+                <p>Nơi các mẫu giày sneaker mới nhất với mức giá Steal Deal nhất mùa xuân hè 2025</p>
+            </div>
+            <div class="article">
+                <div class="product">
+                    <img src="https://authentic-shoes.com/wp-content/uploads/2023/04/602070_01.jpg_5d78c325c3334983ab1e1013f42642bc-600x275.png"
+                        alt="ảnh 1" height="150px" width="300px" class="hinh-giay">
+                    <u>Giày New Balance</u>
+                    <a href="https://authentic-shoes.com/products/giay-new-balance-530-retro-running-navy-bmr530sg">Giày New Balance 530 Retro ‘Running Navy’ MR530SG</a>
+                    <b>2,500,000 ₫</b>
+                </div>
+                <div class="product">
+                    <img src="https://authentic-shoes.com/wp-content/uploads/2023/04/b75806.png_84dfc61a4f4841c089b4da09dabe3567-600x264.png"
+                        alt="ảnh 2" height="150px" width="300px" class="hinh-giay">
+                    <u>Adidas Samba</u>
+                    <a href="https://authentic-shoes.com/products/giay-adidas-samba-og-white-black-gum-b75806">Giày Adidas Samba OG ‘White Black Gum’ B75806</a>
+                    <b>3,500,000 ₫</b>
+                </div>
+                <div class="product">
+                    <img src="https://authentic-shoes.com/wp-content/uploads/2023/04/new-balance-1906r-white-gold-pro_31390e9a8ba5449fa50ca2022380b8ec-600x297.png"
+                        alt="ảnh 3" height="150px" width="300px" class="hinh-giay">
+                    <u>Giày New Balance</u>
+                    <a href="https://authentic-shoes.com/products/giay-new-balance-1906r-white-gold-m1906ra">Giày New Balance 1906R ‘White Gold’ M1906RA</a>
+                    <b>3,500,000 ₫</b>
+                </div>
+                <div class="product">
+                    <img src="https://authentic-shoes.com/wp-content/uploads/2023/04/air-jordan-1-low-paris_2ef4345d72fe4904a8dcafaecc2bfdfa-600x429.jpeg"
+                        alt="ảnh 4" height="150px" width="300px" class="hinh-giay">
+                    <u>Babolat Jet Mach</u>
+                    <a href="https://authentic-shoes.com/products/nike-air-jordan-1-low-paris-cv3043-100">Giày Nike Air Jordan 1 Low ‘Paris’ CV3043-100</a>
+                    <b>3,500,000 ₫ – 4,500,000 ₫</b>
+                </div>
+            </div>
+            <div class="article">
+                <div class="product">
+                    <img src="https://authentic-shoes.com/wp-content/uploads/2023/05/307171-05-768x380.png"
+                        alt="ảnh 5" height="150px" width="300px" class="hinh-giay">
+                    <u>Giày Puma</u>
+                    <a href="https://authentic-shoes.com/products/giay-puma-speedcat-sparco-red-307171-05">Giày Puma Speedcat Sparco ‘Red’ 307171-05</a>
+                    <b>3,500,000 ₫</b>
+                </div>
+                <div class="product">
+                    <img src="https://authentic-shoes.com/wp-content/uploads/2023/04/tb010061_713.png_66e34d60bcbb4342bd26629eb403a334.png"
+                        alt="ảnh 6" height="150px" width="300px" class="hinh-giay">
+                    <u>Giày Sneaker</u>
+                    <a href="https://authentic-shoes.com/products/timberland-men-6-inch-premium-waterproof-boots-tb010061">Giày Timberland Men’s 6-Inch Premium Waterproof Boots TB010061-713</a>
+                    <b>4,100,000 ₫</b>
+                </div>
+                <div class="product">
+                    <img src="https://authentic-shoes.com/wp-content/uploads/2023/04/1183c102_200_sr_rt_glb_1d14a34ca43947e6a4f7c3180207e368-600x236.png"
+                        alt="ảnh 7" height="150px" width="300px" class="hinh-giay">
+                    <u>Giày Onitsuka Tiger</u>
+                    <a href="https://authentic-shoes.com/products/giay-onitsuka-tiger-mexico-66-birch-peacoat-1183c102-200">Giày Onitsuka Tiger Mexico 66 ‘Birch Peacoat’ 1183C102-200</a>
+                    <b>3,700,000 ₫</b>
+                </div>
+                <div class="product">
+                    <img src="https://authentic-shoes.com/wp-content/uploads/2023/04/1169692_01.jpg_34a836dd9cb541b4bb01484878ea864c-600x293.png"
+                        alt="ảnh 8" height="150px" width="300px" class="hinh-giay">
+                    <u>Giày Jordan 1 (2025)</u>
+                    <a href="https://authentic-shoes.com/products/giay-nike-air-jordan-1-low-panda-dc0774-101">Giày Nike Air Jordan 1 Low ‘Panda’ DC0774-101</a>
+                    <b>3,300,000 ₫ – 3,500,000 ₫</b>
+                </div>
+            </div>
+            <div class="all"><i>Xem tất cả ></i></div>
+            <hr class="gray-hr">
+        <div class="nav-1">
+            <b>Vợt PickedBall</b>
+            <p>Mua sắm các mẫu vợt chơi PickedBall mới nhất đến từ các thương hiệu nổi tiếng trên thế giới như Joola, Selkirk, Sypik, Gearbox, Protron, Babolat…</p>
+        </div>
+        <div class="article">
+            <div class="product" id="pickleball">
+                <img src="https://authentic-shoes.com/wp-content/uploads/2025/04/JOOLA_WBG_2025_ProIV_Perseus-Per-1.png"
+                    alt="ảnh 1" height="200px" width="250px" class="hinh-giay">
+                <u>Vợt Pickleball</u>
+                <a href="https://authentic-shoes.com/products/vot-pickleball-joola-ben-johns-perseus-pro-iv-16mm-black-red">Vợt Pickleball Joola Ben Johns Perseus Pro IV 16mm ‘Black Red’</a>
+                <b>6,500,000 ₫</b>
+            </div>
+            <div class="product">
+                <img src="https://authentic-shoes.com/wp-content/uploads/2025/05/sypik-triton-pro-3-sweet-morning.png"
+                    alt="ảnh 2" height="200px" width="250px" class="hinh-giay">
+                <u>Phụ kiện</u>
+                <a href="https://authentic-shoes.com/products/vot-pickleball-sypik-triton-pro-3-ultimate-16mm-sweet-morning">Vợt Pickleball Sypik Triton Pro 3 Ultimate 16mm ‘Sweet Morning’</a>
+                <b>3,900,000 ₫</b>
+            </div>
+            <div class="product">
+                <img src="https://authentic-shoes.com/wp-content/uploads/2024/12/Selkirk-Labs-Project-007.png"
+                    alt="ảnh 3" height="200px" width="250px" class="hinh-giay">
+                <u>Vợt Pickleball</u>
+                <a href="https://authentic-shoes.com/products/vot-pickleball-selkirk-labs-project-007">Vợt Pickleball Selkirk Labs Project Epic 007</a>
+                <b>11,500,000 ₫</b>
+            </div>
+            <div class="product">
+                <img src="https://authentic-shoes.com/wp-content/uploads/2025/05/paddletek-bantam-alw-c-pink-limi.png"
+                    alt="ảnh 4" height="200px" width="250px" class="hinh-giay">
+                <u>Vợt Pickleball</u>
+                <a href="https://authentic-shoes.com/products/vot-pickleball-paddletek-bantam-alw-c-pink-limited-edition">Vợt Pickleball Paddletek Bantam ALW-C ‘Pink Limited Edition’</a>
+                <b>6,100,000 ₫</b>
+            </div>
+        </div>
+        <div class="article">
+            <div class="product" id="pickleball">
+                <img src="https://authentic-shoes.com/wp-content/uploads/2025/05/39596_source_1744413555.png"
+                    alt="ảnh 5" height="200px" width="250px" class="hinh-giay">
+                <u>Vợt Pickleball</u>
+                <a href="https://authentic-shoes.com/products/vot-pickleball-adidas-metalbone-2025-pickleball-paddle-14-5mm-black-white">Vợt Pickleball Adidas Metalbone 2025 Pickleball Paddle 14.5mm ‘Black White’</a>
+                <b>7,900,000 ₫</b>
+            </div>
+            <div class="product">
+                <img src="https://authentic-shoes.com/wp-content/uploads/2025/06/1PGX201-1_Gearbox_GX2_Elongated.png"
+                    alt="ảnh 6" height="200px" width="250px" class="hinh-giay">
+                <u>Phụ kiện</u>
+                <a href="https://authentic-shoes.com/products/vot-pickleball-gearbox-gx2-elongated-16mm-black">Vợt Pickleball Gearbox GX2 Elongated 16mm ‘Black’</a>
+                <b>7,500,000 ₫</b>
+            </div>
+            <div class="product">
+                <img src="https://authentic-shoes.com/wp-content/uploads/2025/02/joola-tyson-mcguffin-magnus-3s-1.png"
+                    alt="ảnh 7" height="200px" width="250px" class="hinh-giay">
+                <u>Vợt Pickleball</u>
+                <a href="https://authentic-shoes.com/products/vot-pickleball-joola-tyson-mcguffin-magnus-3s-black-pink">Vợt Pickleball Joola Tyson McGuffin Magnus 3S ‘Black Pink’</a>
+                <b>5,900,000 ₫</b>
+            </div>
+            <div class="product">
+                <img src="https://authentic-shoes.com/wp-content/uploads/2025/05/pdp_image-PDP-LUXX-Infinigrit-Co-1.png"
+                    alt="ảnh 8" height="200px" width="250px" class="hinh-giay">
+                <u>Vợt Pickleball</u>
+                <a href="https://authentic-shoes.com/products/vot-pickleball-selkirk-luxx-control-air-infinigrit-blue">Vợt Pickleball Selkirk Luxx Control Air Infinigrit ‘Blue’</a>
+                <b>6,900,000 ₫</b>
+            </div>
+        </div>
+        <div class="all"><i>Xem tất cả ></i></div>
+        <div class="img-content"><img src="https://authentic-shoes.com/wp-content/uploads/2025/06/16aa704b6c9b1fdee805760a80f3df02.webp" alt="ảnh chùm" height ="600px" width="100%"></div>
+        <div class="nav-1">
+            <b>Giày Adidas chính hãng</b>
+            <p>Giày Aiddas Samba, Campus và dép Yeezy cho mùa hè 2025</p>
+        </div>
+        <div class="article">
+            <div class="product">
+                <img src="https://authentic-shoes.com/wp-content/uploads/2023/04/hq8750.png_fe3f4f8ae0194d379e51223235629a11-600x291.png"
+                    alt="ảnh 1" height="150px" width="300px" class="hinh-giay">
+                <u>Adidas adiFOM</u>
+                <a href="https://authentic-shoes.com/products/giay-adidas-adifom-superstar-core-white-hq8750">Giày Adidas AdiFOM Superstar ‘Core White’ HQ8750</a>
+                <b>1,700,000 ₫</b>
+            </div>
+            <div class="product">
+                <img src="https://authentic-shoes.com/wp-content/uploads/2023/10/Samba_OG_Shoes_Kids_White_IE3675_01_standard-600x251.png"
+                    alt="ảnh 2" height="150px" width="300px" class="hinh-giay">
+                <u>Adidas Samba</u>
+                <a href="https://authentic-shoes.com/products/giay-adidas-samba-og-white-ie3675">Giày Adidas Samba OG ‘White’ IE3675</a>
+                <b>2,300,000 ₫</b>
+            </div>
+            <div class="product">
+                <img src="https://authentic-shoes.com/wp-content/uploads/2023/08/Screenshot_2023.08.10_13.26.12.007-600x228.png"
+                    alt="ảnh 3" height="150px" width="300px" class="hinh-giay">
+                <u>Dép</u>
+                <a href="https://authentic-shoes.com/products/dep-adidas-yeezy-slide-granite-id4132">Dép Adidas Yeezy Slide ‘Granite’ ID4132</a>
+                <b>2,900,000 ₫</b>
+            </div>
+            <div class="product">
+                <img src="https://authentic-shoes.com/wp-content/uploads/2023/06/Untitled-design-9-600x305.png"
+                    alt="ảnh 4" height="150px" width="300px" class="hinh-giay">
+                <u>Giày Adidas Boost</u>
+                <a href="https://authentic-shoes.com/products/giay-adidas-yeezy-boost-350-v2-carbon-beluga-hq7045">Giày Adidas Yeezy Boost 350 V2 ‘Carbon Beluga’ HQ7045</a>
+                <b>5,900,000 ₫</b>
+            </div>
+        </div>
+        <div class="article">
+            <div class="product">
+                <img src="https://authentic-shoes.com/wp-content/uploads/2024/09/IF0467-600x298.png"
+                    alt="ảnh 1" height="150px" width="300px" class="hinh-giay">
+                <u>Giày Adidas Barricade</u>
+                <a href="https://authentic-shoes.com/products/giay-adidas-barricade-13-2024-athlete-pack-if0467">Giày Adidas Barricade 13 ‘2024 Athlete Pack’ IF0467</a>
+                <b>3,500,000 ₫</b>
+            </div>
+            <div class="product">
+                <img src="https://authentic-shoes.com/wp-content/uploads/2024/09/IF9129-600x290.png"
+                    alt="ảnh 2" height="150px" width="300px" class="hinh-giay">
+                <u>Giày Adidas Barricade</u>
+                <a href="https://authentic-shoes.com/products/giay-adidas-barricade-13-white-lucid-blue-if9129">Giày Adidas Barricade 13 ‘White Lucid Blue’ IF9129</a>
+                <b>3,900,000 ₫</b>
+            </div>
+            <div class="product">
+                <img src="https://authentic-shoes.com/wp-content/uploads/2025/02/JR6373_HM1.png"
+                    alt="ảnh 3" height="150px" width="300px" class="hinh-giay">
+                <u>Giày Sneaker</u>
+                <a href="https://authentic-shoes.com/products/giay-adidas-adizero-adios-pro-4-yellow-navy-jr6373">Giày Adidas Adizero Adios Pro 4 ‘Yellow Navy’ JR6373</a>
+                <b>6,900,000 ₫</b>
+            </div>
+            <div class="product">
+                <img src="https://authentic-shoes.com/wp-content/uploads/2025/02/Giay_Adizero_Adios_Pro_4_trang_J-5.png"
+                    alt="ảnh 4" height="150px" width="300px" class="hinh-giay">
+                <u>Giày Sneaker</u>
+                <a href="https://authentic-shoes.com/products/giay-adidas-adizero-adios-pro-4-white-black-jr1094">Giày Adidas Adizero Adios Pro 4 ‘White Black’ JR1094</a>
+                <b>6,500,000 ₫</b>
+            </div>
+        </div>
+        <div class="all"><i>Xem tất cả ></i></div>
+        <div><img src="https://authentic-shoes.com/wp-content/uploads/2025/03/Anh-man-hinh-2025-03-12-luc-00.08.53.png" alt="ảnh chùm" height ="500px" width="100%"></div>
+        <div class="nav-1">
+            <b>Giày Onitsuka Tiger chính hãng</b>
+            <p>Giày Aiddas Samba, Campus và dép Yeezy cho mùa hè 2025</p>
+        </div>
+        <div class="article">
+            <div class="product">
+                <img src="https://authentic-shoes.com/wp-content/uploads/2023/04/screenshot_2022.02.22_16.42.00.902_71c66a999c9549faba19d898c4ab57a7-600x214.png"
+                    alt="ảnh 1" height="150px" width="300px" class="hinh-giay">
+                <u>Giày Onitsuka Tiger</u>
+                <a href="https://authentic-shoes.com/products/giay-onitsuka-tiger-mexico-66-silver-white-thl7c2-9399">Giày Onitsuka Tiger Mexico 66 Silver White THL7C2-9399</a>
+                <b>3,900,000 ₫ – 4,500,000 ₫</b>
+            </div>
+            <div class="product">
+                <img src="https://authentic-shoes.com/wp-content/uploads/2023/04/screenshot_2022.02.22_19.04.06.035_daabcf47e5934f218fd8ef4262464efa-600x253.png"
+                    alt="ảnh 2" height="150px" width="300px" class="hinh-giay">
+                <u>Giày Onitsuka Tiger</u>
+                <a href="https://authentic-shoes.com/wp-content/uploads/2023/04/screenshot_2022.02.22_19.04.06.035_daabcf47e5934f218fd8ef4262464efa-600x253.png">Giày Onitsuka Tiger Mexico 66 SD 1183A727-101</a>
+                <b>4,500,000 ₫</b>
+            </div>
+            <div class="product">
+                <img src="https://authentic-shoes.com/wp-content/uploads/2023/11/ef4a8783-de31-4a6a-a63f-a1e67092-1-600x220.png"
+                    alt="ảnh 3" height="150px" width="300px" class="hinh-giay">
+                <u>Giày Onitsuka Tiger</u>
+                <a href="https://authentic-shoes.com/wp-content/uploads/2023/11/ef4a8783-de31-4a6a-a63f-a1e67092-1-600x220.png">Giày Onitsuka Tiger Tokuten ‘White’ 1183B938-100</a>
+                <b>4,100,000 ₫</b>
+            </div>
+            <div class="product">
+                <img src="https://authentic-shoes.com/wp-content/uploads/2023/10/1183C102_201.png-600x244.png"
+                    alt="ảnh 4" height="150px" width="300px" class="hinh-giay">
+                <u>Giày Onitsuka Tiger</u>
+                <a href="https://authentic-shoes.com/wp-content/uploads/2023/10/1183C102_201.png-600x244.png">Giày Onitsuka Tiger Mexico 66 ‘Birch Green’ 1183C102-201</a>
+                <b>3,500,000 ₫</b>
+            </div>
+        </div>
+        <div><img src="https://authentic-shoes.com/wp-content/uploads/2025/03/Anh-man-hinh-2025-03-12-luc-00.14.12.png" alt="ảnh chùm" height ="400px" width="100%"></div>
+        <div class="nav-1">
+            <b>Tin Tức - Sự Kiện</b>
+            <p>Tin tức phổ biến</p>
+        </div>
+        
+        </div>
+    </div>
+
+
+
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded",function(){
+            const loginSection = document.getElementById("loginSection");
+            const loginLink = document.getElementById("loginLink");
+            const isLoggedIn = localStorage.getItem("LoggedIn") === "true";
+            if (isLoggedIn) {
+                loginSection.innerHTML = `<span>Xin Chào Bạn | <a href ="#" id = "logoutLink">Đăng xuất</a></span>`;
+                const logoutLink = document.getElementById("logoutLink");
+                logoutLink.addEventListener("click",function(){
+                    localStorage.removeItem("LoggedIn");
+                    window.location.href = "BTL.html";
+                });
+            } else {
+                loginLink.href="login.html";
+            }
+        });
+    </script>
+</body>
+</html>
