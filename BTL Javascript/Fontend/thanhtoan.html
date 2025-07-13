@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thanh Toán - Authentic Shoes</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+        .order-summary {
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+        .order-total {
+            font-size: 18px;
+            font-weight: bold;
+            text-align: right;
+            margin: 20px 0;
+        }
+        .payment-methods {
+            margin-bottom: 20px;
+        }
+        .payment-method {
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .payment-method.selected {
+            border-color: #007bff;
+            background-color: #f0f8ff;
+        }
+        .btn {
+            display: block;
+            width: 100%;
+            padding: 12px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            text-align: center;
+        }
+        .btn:hover {
+            background-color: #218838;
+        }
+        #cartItems {
+            max-height: 300px;
+            overflow-y: auto;
+        }
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>THANH TOÁN</h1>
+        
+        <div class="order-summary">
+            <h3>Đơn hàng của bạn</h3>
+            <div id="cartItems"></div>
+            <div id="cartTotal" class="order-total"></div>
+        </div>
+
+        <div class="payment-methods">
+            <h3>Phương thức thanh toán</h3>
+            <div class="payment-method selected">
+                <input type="radio" name="payment" id="cod" checked>
+                <label for="cod">Thanh toán khi nhận hàng (COD)</label>
+            </div>
+            <div class="payment-method">
+                <input type="radio" name="payment" id="bank">
+                <label for="bank">Chuyển khoản ngân hàng</label>
+            </div>
+        </div>
+
+        <button id="confirmBtn" class="btn">XÁC NHẬN THANH TOÁN</button>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Lấy thông tin giỏ hàng từ localStorage hoặc từ trang chính
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const cartItems = document.getElementById('cartItems');
+            const cartTotal = document.getElementById('cartTotal');
+            
+            // Hiển thị sản phẩm trong giỏ hàng
+            cartItems.innerHTML = '';
+            let total = 0;
+            
+            cart.forEach(item => {
+                const itemElement = document.createElement('div');
+                itemElement.className = 'cart-item';
+                itemElement.innerHTML = `
+                    <span>${item.title} (x${item.quantity})</span>
+                    <span>${(item.price * item.quantity).toLocaleString()} ₫</span>
+                `;
+                cartItems.appendChild(itemElement);
+                
+                total += item.price * item.quantity;
+            });
+            
+            // Hiển thị tổng tiền
+            cartTotal.textContent = `Tổng cộng: ${total.toLocaleString()} ₫`;
+            
+            // Lưu tổng tiền vào localStorage để sử dụng ở trang success
+            localStorage.setItem('orderTotal', total.toLocaleString() + ' ₫');
+            
+            // Tạo mã đơn hàng ngẫu nhiên
+            const orderId = 'DH' + Math.floor(Math.random() * 1000000);
+            localStorage.setItem('orderId', orderId);
+            
+            // Xử lý khi nhấn nút xác nhận thanh toán
+            document.getElementById('confirmBtn').addEventListener('click', function() {
+                // Xóa giỏ hàng sau khi thanh toán
+                localStorage.removeItem('cart');
+                
+                // Chuyển đến trang thành công
+                window.location.href = 'success.html';
+            });
+        });
+    </script>
+</body>
+</html>

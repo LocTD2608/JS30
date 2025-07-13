@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thanh Toán Thành Công</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+        }
+        .success-container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .success-container h1 {
+            color: #28a745;
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 10px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const orderIdElement = document.getElementById("orderId");
+            const orderTotalElement = document.getElementById("orderTotal");
+            orderIdElement.textContent = localStorage.getItem("orderId") || "N/A";
+            orderTotalElement.textContent = localStorage.getItem("orderTotal") || "0 ₫";
+        });
+    </script>
+</head>
+<body>
+    <div class="success-container">
+        <h1>THANH TOÁN THÀNH CÔNG!</h1>
+        <p>Mã đơn hàng: <span id="orderId"></span></p>
+        <p>Tổng tiền: <span id="orderTotal"></span></p>
+        <p>Cảm ơn bạn đã mua hàng tại Authentic Shoes</p>
+        <a href="BTL.html" class="btn">QUAY VỀ TRANG CHỦ</a>
+        <a href="#" class="btn" onclick="window.print()">IN HÓA ĐƠN</a>
+    </div>
+</body>
+</html>
